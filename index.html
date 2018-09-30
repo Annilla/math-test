@@ -1,0 +1,46 @@
+<html>
+  <head>
+    <title>數學遊戲好好玩</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var intNum = 9;
+      var intArray = []; // 整數的陣列
+
+      // 整數的陣列
+      for (var i = 0; i < intNum; i++) {
+        intArray.push(i + 1);
+      }
+      document.write("intArray: " + intArray + "<br />");
+      console.log('intArray', intArray);
+
+      function deleteOdd(arr) {
+        var evenArr = []
+        // 第一次刪除之後的陣列
+        for (var i = 1; i < arr.length; i = i + 2) {
+          evenArr.push(arr[i]);
+        }
+        document.write("evenArr: " + evenArr + "<br />");
+        console.log('evenArr', evenArr);
+        return evenArr;
+      }
+
+      function arrInvert(arr) {
+        var invertArr = []
+        // 第一次刪除之後的陣列反過來
+        for (var i = 0; i < arr.length; i++) {
+          invertArr.push(arr[arr.length - 1 - i]);
+        }
+        document.write("invertArr: " + invertArr + "<br />");
+        console.log('invertArr', invertArr);
+        return invertArr;
+      }
+
+      // 重複執行
+      while (intArray.length !== 1) {
+        intArray = deleteOdd(intArray);
+        intArray = arrInvert(intArray);
+      }
+    </script>
+  </body>
+</html>
